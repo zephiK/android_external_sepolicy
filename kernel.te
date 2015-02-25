@@ -1,5 +1,5 @@
 # Life begins with the kernel.
-type kernel, domain;
+type kernel, domain, mlstrustedsubject;
 
 # Run /init before we have switched domains.
 allow kernel rootfs:file execute_no_trans;
