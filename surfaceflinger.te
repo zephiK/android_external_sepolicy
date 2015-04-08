@@ -59,17 +59,6 @@ allow surfaceflinger tee_device:chr_file rw_file_perms;
 
 allow surfaceflinger surfaceflinger_service:service_manager add;
 
-# address tmp_system_server_service accesses
-allow surfaceflinger {
-    power_service
-}:service_manager find;
-
-service_manager_local_audit_domain(surfaceflinger)
-auditallow surfaceflinger {
-    tmp_system_server_service
-    -power_service
-}:service_manager find;
-
 ###
 ### Neverallow rules
 ###
