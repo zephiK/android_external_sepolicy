@@ -52,6 +52,9 @@ allow init security_prop:property_service set;
 r_dir_file(init, security_file)
 allow init kernel:security load_policy;
 
+# Use tmpfs as /data, used for booting when /data is encrypted
+allow init tmpfs:dir relabelfrom;
+
 # Any operation that can modify the kernel ring buffer, e.g. clear
 # or a read that consumes the messages that were read.
 allow init kernel:system syslog_mod;
