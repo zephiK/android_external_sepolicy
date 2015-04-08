@@ -56,3 +56,7 @@ allow shell debugfs:file r_file_perms;
 
 # allow shell to run dmesg
 allow shell kernel:system syslog_read;
+
+# allow shell to look through /proc/ for ps, top
+allow shell domain:dir { search open read getattr };
+allow shell domain:{ file lnk_file } { open read getattr };
