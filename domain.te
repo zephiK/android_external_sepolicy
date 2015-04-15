@@ -275,10 +275,11 @@ neverallow {
     -appdomain
     -dumpstate
     -shell
+    -mediaserver
     userdebug_or_eng(`-su')
     -system_server
     -zygote
-} { file_type -system_file -exec_type }
+} { file_type -system_file -exec_type }:file execute;
 neverallow {
     domain
     -appdomain # for oemfs
